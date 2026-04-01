@@ -1,0 +1,12 @@
+# CRA: build output is "build" (not "dist")
+# Repo root = this project — do NOT set a non-existent subfolder as base on Netlify.
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# React Router (client-side routes) on refresh
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
