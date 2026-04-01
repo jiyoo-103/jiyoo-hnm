@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nav-section {
@@ -50,4 +51,10 @@
 
 .search-box input::placeholder {
   color: #6b7c8d;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
