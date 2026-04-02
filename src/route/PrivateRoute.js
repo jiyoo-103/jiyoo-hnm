@@ -1,9 +1,16 @@
-import React from 'react'
-import ProductDetail from '../page/ProductDetail';
-import { Navigate} from "react-router-dom";
+import React from "react";
+import { Navigate } from "react-router-dom";
+import ProductDetail from "../page/ProductDetail";
+import { useLocation } from "react-router-dom";
 
-const PrivateRoute = ({authenticate}) => {
-  return authenticate === true ? <ProductDetail /> : <Navigate to="/login" />
+const PrivateRoute = ({ authenticate }) => {
+  const location = useLocation();
+  console.log("lll", location);
+  return authenticate ? (
+    <ProductDetail />
+  ) : (
+    <Navigate to="/login" replace state={{ to: location }} />
+  );
 };
 
-export default PrivateRoute
+export default PrivateRoute;

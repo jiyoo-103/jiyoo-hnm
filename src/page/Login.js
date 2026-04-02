@@ -1,24 +1,20 @@
-import React from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import { useNavigate} from 'react-router-dom';
-
-const Login = ({setAuthenticate}) => {
+import React from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+const Login = ({ setAuthenticate, to }) => {
+  console.log("tototo", to);
   const navigate = useNavigate();
-  const loginUser = (event)=>{
+  const login = (event) => {
     event.preventDefault();
-    console.log('login user function issue');
     setAuthenticate(true);
-    navigate('/');
-  }
+    navigate("/");
+  };
   return (
-    <Container>
-      <Form onSubmit={(event)=>loginUser(event)}>
+    <Container className="login-area">
+      <Form className="login-form" onSubmit={login}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -26,12 +22,8 @@ const Login = ({setAuthenticate}) => {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-
         <Button variant="danger" type="submit">
-          로그인
+          Login
         </Button>
       </Form>
     </Container>
