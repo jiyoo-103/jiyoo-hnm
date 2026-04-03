@@ -116,8 +116,25 @@ body{
   .menu {
     display: none;
   }
-  .search-box{
-    display: none;
+  .nav-menu-area {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 16px;
+    position: relative;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: auto;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 12px;
+    box-sizing: border-box;
+  }
+  .search-box input {
+    flex: 1;
+    min-width: 0;
   }
 }
 
